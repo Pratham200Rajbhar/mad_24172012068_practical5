@@ -93,8 +93,8 @@ app/src/main/java/com/bytemap/mad_24172012068_practical5/
 
 <!-- Add your screenshots here -->
 <div align="center">
-  <img src="img.png" alt="Login Screen" width="300" height="500" style="margin: 10px;">
-  <img src="img_1.png" alt="Registration Screen" width="300" height="500" style="margin: 10px;">
+  <img src="img.png" alt="Login Screen" height="500" style="margin: 10px;">
+  <img src="img_1.png" alt="Registration Screen" height="500" style="margin: 10px;">
 </div>
 ## Future Enhancements
 
