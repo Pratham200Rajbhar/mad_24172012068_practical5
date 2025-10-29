@@ -1,6 +1,8 @@
 package com.bytemap.mad_24172012068_practical5.screen.components
 
+import android.content.Context
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +15,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -28,12 +31,27 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.bytemap.mad_24172012068_practical5.R
 import com.bytemap.mad_24172012068_practical5.ui.theme.Pink80
 
 
 @Composable
-fun LoginUI() {
+fun LoginScreen(context: Context, navController: NavController) {
+    Scaffold (modifier = Modifier.fillMaxSize()){
+        innerPadding ->
+        Box(modifier = Modifier.fillMaxSize().padding(innerPadding)){
+            LoginUI(navController = navController)
+        }
+    }
+}
+
+fun navigateToRegisterScreen(navController: NavController) {
+    navController.navigate("register")
+}
+
+@Composable
+fun LoginUI(navController:  NavController?= null) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     Column(modifier = Modifier
@@ -90,16 +108,10 @@ fun LoginUI() {
             Text(text = "Don't have an account?", fontSize = 16.sp)
             Spacer(modifier = Modifier.width(5.dp))
             TextButton(onClick = {
-
+                navController?.navigate("register")
             }) {
                 Text("SIGN UP", color = Pink80, fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
         }
     }
-}
-
-@Composable
-@Preview(showBackground = true)
-fun LoginActivityPreview() {
-    LoginUI()
 }

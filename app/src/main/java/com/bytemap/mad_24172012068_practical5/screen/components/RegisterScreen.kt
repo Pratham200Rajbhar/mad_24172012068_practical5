@@ -28,11 +28,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.bytemap.mad_24172012068_practical5.R
 import com.bytemap.mad_24172012068_practical5.ui.theme.Pink80
 
 @Composable
-fun RegisterUI() {
+fun RegisterUI(navController: NavController? = null) {
     var name by remember { mutableStateOf("") }
     var phoneNumber by remember { mutableStateOf("") }
     var city by remember { mutableStateOf("") }
@@ -103,7 +104,7 @@ fun RegisterUI() {
             Text(text = "Do you have an account?", fontSize = 16.sp)
             Spacer(modifier = Modifier.width(5.dp))
             TextButton(onClick = {
-
+                navController?.navigate("login")
             }) {
                 Text("LOGIN", color = Pink80, fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
