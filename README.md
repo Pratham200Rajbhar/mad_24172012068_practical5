@@ -92,10 +92,10 @@ app/src/main/java/com/bytemap/mad_24172012068_practical5/
 ## Screenshots
 
 <!-- Add your screenshots here -->
-### Login Screen
-![img.png](img.png)
-### Registration Screen
-![img_1.png](img_1.png)
+<div align="center">
+  <img src="img.png" alt="Login Screen" width="300" height="500" style="margin: 10px;">
+  <img src="img_1.png" alt="Registration Screen" width="300" height="500" style="margin: 10px;">
+</div>
 ## Future Enhancements
 
 - Backend integration for actual authentication
